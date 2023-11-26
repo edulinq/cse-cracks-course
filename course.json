@@ -1,0 +1,19 @@
+{
+    "id": "CSE-i123",
+    "display-name": "CSE i123 - CSE Cracks",
+    "backup": [
+        {"when": {"time-of-day": "04:00"}}
+    ],
+    "report": [{
+        "when": {"time-of-day": "04:05"},
+        "to": [
+            "eaugusti@ucsc.edu"
+        ]
+    }],
+    "scoring-upload": [
+        {"when": {"time-of-day": "00:00"}},
+        {"when": {"time-of-day": "06:00"}},
+        {"when": {"time-of-day": "12:00"}},
+        {"when": {"time-of-day": "18:00"}}
+    ]
+}

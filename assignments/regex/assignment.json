@@ -1,0 +1,12 @@
+{
+    "id": "regex",
+    "display-name": "Regular Expressions",
+    "static-files": [
+        "../../requirements.txt",
+        "grader.py"
+    ],
+    "image": "autograder.python",
+    "post-static-docker-commands": [
+        "RUN pip3 install -r work/requirements.txt"
+    ]
+}
