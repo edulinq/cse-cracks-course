@@ -8,3 +8,7 @@ TASK2_REGEX = r'\d\w\w\w\d\d\d'
 TASK3_REGEX = r'code_\w = ".\d\d\d"'
 
 TASK4_REGEX = r'code_[a-z][ \t]=[ \t]"[a-zA-Z0-9]\d\d\d"'
+
+TASK5_REGEX = r'^0x[0-9a-f][0-9a-f]\.[0-9a-f][0-9a-f]$'
+
+TASK6_REGEX = r'^0x[0-9a-f]+\.?[0-9a-f]*$'

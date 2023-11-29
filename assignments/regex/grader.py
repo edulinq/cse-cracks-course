@@ -15,6 +15,8 @@ class Regex(autograder.assignment.Assignment):
             T2(10, "Task 2: License Plates"),
             T3(10, "Task 3: Mysterious Code"),
             T4(10, "Task 4: Mysterious Code - Better"),
+            T5(10, "Task 5: Finding Bad Data"),
+            T6(10, "Task 6: Finding Bad Data - Better"),
             # You can automatically add a question that checks the assignment's Python style.
             autograder.style.Style(kwargs.get('input_dir'), max_points = 0),
         ], **kwargs)
@@ -64,7 +66,6 @@ class T1(autograder.question.Question):
         # You can skip this for questions that can have negative or bonus points.
         self.cap_score()
 
-# Follows the same pattern as T1.
 class T2(autograder.question.Question):
     def score_question(self, submission):
         regex = submission.__all__.TASK2_REGEX
@@ -92,11 +93,8 @@ class T2(autograder.question.Question):
 
         _run_regex_test_cases(self, regex, test_cases)
 
-        # Ensure that the assigned score is in [0, max_poionts].
-        # You can skip this for questions that can have negative or bonus points.
         self.cap_score()
 
-# Follows the same pattern as T1.
 class T3(autograder.question.Question):
     def score_question(self, submission):
         regex = submission.__all__.TASK3_REGEX
@@ -126,11 +124,8 @@ class T3(autograder.question.Question):
 
         _run_regex_test_cases(self, regex, test_cases)
 
-        # Ensure that the assigned score is in [0, max_poionts].
-        # You can skip this for questions that can have negative or bonus points.
         self.cap_score()
 
-# Follows the same pattern as T1.
 class T4(autograder.question.Question):
     def score_question(self, submission):
         regex = submission.__all__.TASK4_REGEX
@@ -164,8 +159,69 @@ class T4(autograder.question.Question):
 
         _run_regex_test_cases(self, regex, test_cases)
 
-        # Ensure that the assigned score is in [0, max_poionts].
-        # You can skip this for questions that can have negative or bonus points.
+        self.cap_score()
+
+class T5(autograder.question.Question):
+    def score_question(self, submission):
+        regex = submission.__all__.TASK5_REGEX
+
+        if ((not isinstance(regex, str)) or (regex == "")):
+            self.fail("Your regex should be a non-empty string.")
+
+        self.full_credit()
+
+        # [(string, is_match?, feedback), ...]
+        test_cases = [
+            # Matching test cases.
+            ('0x12.34', True, 'only numeric'),
+            ('0xfe.dc', True, 'only alpha'),
+            ('0x10.00', True, 'smallest possible value'),
+            ('0xff.ff', True, 'largest possible value'),
+
+            # Non-matching test cases.
+            ('xff.ff', False, 'bad hex prefix'),
+            ('0000xff.ff', False, 'junk at the beginning'),
+            ('0xff.fffff', False, 'junk at the end'),
+            ('0xff.f', False, 'too few places after the point'),
+            ('0xff', False, 'not float'),
+            ('0xffff', False, 'no point'),
+            ('0x12.AB', False, 'uppercase'),
+        ]
+
+        _run_regex_test_cases(self, regex, test_cases)
+
+        self.cap_score()
+
+class T6(autograder.question.Question):
+    def score_question(self, submission):
+        regex = submission.__all__.TASK6_REGEX
+
+        if ((not isinstance(regex, str)) or (regex == "")):
+            self.fail("Your regex should be a non-empty string.")
+
+        self.full_credit()
+
+        # [(string, is_match?, feedback), ...]
+        test_cases = [
+            # Matching test cases.
+            ('0x12.34', True, 'only numeric'),
+            ('0xfe.dc', True, 'only alpha'),
+            ('0x0', True, 'fewest numeric digits'),
+            ('0xf', True, 'fewest alpha digits'),
+            ('0x123456789.abcdef', True, 'long number'),
+            ('0x0001.0000000', True, 'lots of zeros'),
+            ('0x12.', True, 'trailing point'),
+
+            # Non-matching test cases.
+            ('xff.ff', False, 'bad hex prefix'),
+            ('zzz0xff.ff', False, 'junk at the beginning'),
+            ('0xff.ffzzz', False, 'junk at the end'),
+            ('0x12.AB', False, 'uppercase'),
+            ('0x12.34.', False, 'extra point'),
+        ]
+
+        _run_regex_test_cases(self, regex, test_cases)
+
         self.cap_score()
 
 # A helper function for running regex test cases.
