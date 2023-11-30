@@ -12,3 +12,6 @@ TASK4_REGEX = r'code_[a-z][ \t]=[ \t]"[a-zA-Z0-9]\d\d\d"'
 TASK5_REGEX = r'^0x[0-9a-f][0-9a-f]\.[0-9a-f][0-9a-f]$'
 
 TASK6_REGEX = r'^0x[0-9a-f]+\.?[0-9a-f]*$'
+
+TASK8_REGEX = r'code_[a-z]\s*=\s*"([a-zA-Z0-9]\d{3})"'
+TASK8_REPLACEMENT = r'code_\1 = "\1"'

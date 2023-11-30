@@ -17,6 +17,8 @@ class Regex(autograder.assignment.Assignment):
             T4(10, "Task 4: Mysterious Code - Better"),
             T5(10, "Task 5: Finding Bad Data"),
             T6(10, "Task 6: Finding Bad Data - Better"),
+            # T7(10, "Task 7: Finding Bad Data - Best"),
+            T8(10, "Task 8: Mysterious Code - Best"),
             # You can automatically add a question that checks the assignment's Python style.
             autograder.style.Style(kwargs.get('input_dir'), max_points = 0),
         ], **kwargs)
@@ -221,6 +223,38 @@ class T6(autograder.question.Question):
         ]
 
         _run_regex_test_cases(self, regex, test_cases)
+
+        self.cap_score()
+
+class T8(autograder.question.Question):
+    def score_question(self, submission):
+        regex = submission.__all__.TASK8_REGEX
+        replacement = submission.__all__.TASK8_REPLACEMENT
+
+        if ((not isinstance(regex, str)) or (regex == "")):
+            self.fail("Your regex should be a non-empty string.")
+
+        if ((not isinstance(replacement, str)) or (replacement == "")):
+            self.fail("Your replacement should be a non-empty string.")
+
+        self.full_credit()
+
+        # [(target, expected, feedback), ...]
+        test_cases = [
+            ('code_z = "z987"', 'code_z987 = "z987"', "code starting with a lowercase letter"),
+            ('code_z = "Z987"', 'code_Z987 = "Z987"', "code starting with an uppercase letter"),
+            ('code_a\t=\t"a123"', 'code_a123 = "a123"', "non-space characters used"),
+            ('code_a =\t"a123"', 'code_a123 = "a123"', "one space and one tab"),
+            ('code_a\t= "a123"', 'code_a123 = "a123"', "one tab and one space"),
+            ('code_a = "0987"', 'code_0987 = "0987"', "code starting with a digit"),
+        ]
+
+        for (target, expected, feedback) in test_cases:
+            actual = re.sub(regex, replacement, target)
+
+            if (actual != expected):
+                message = "Missed test case: '%s'." % (feedback)
+                self.add_message(message, add_score = -1)
 
         self.cap_score()
 
