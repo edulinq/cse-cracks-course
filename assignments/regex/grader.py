@@ -17,8 +17,8 @@ class Regex(autograder.assignment.Assignment):
             T4(10, "Task 4: Mysterious Code - Better"),
             T5(10, "Task 5: Finding Bad Data"),
             T6(10, "Task 6: Finding Bad Data - Better"),
-            # T7(10, "Task 7: Finding Bad Data - Best"),
-            T8(10, "Task 8: Mysterious Code - Best"),
+            T7(20, "Task 7: Finding Bad Data - Best"),
+            T8(20, "Task 8: Mysterious Code - Best"),
             # You can automatically add a question that checks the assignment's Python style.
             autograder.style.Style(kwargs.get('input_dir'), max_points = 0),
         ], **kwargs)
@@ -181,7 +181,7 @@ class T5(autograder.question.Question):
             ('0xff.ff', True, 'largest possible value'),
 
             # Non-matching test cases.
-            ('xff.ff', False, 'bad hex prefix'),
+            ('xff.ff', False, 'bad hexadecimal prefix'),
             ('0000xff.ff', False, 'junk at the beginning'),
             ('0xff.fffff', False, 'junk at the end'),
             ('0xff.f', False, 'too few places after the point'),
@@ -215,11 +215,64 @@ class T6(autograder.question.Question):
             ('0x12.', True, 'trailing point'),
 
             # Non-matching test cases.
-            ('xff.ff', False, 'bad hex prefix'),
+            ('xff.ff', False, 'bad hexadecimal prefix'),
             ('zzz0xff.ff', False, 'junk at the beginning'),
             ('0xff.ffzzz', False, 'junk at the end'),
             ('0x12.AB', False, 'uppercase'),
             ('0x12.34.', False, 'extra point'),
+        ]
+
+        _run_regex_test_cases(self, regex, test_cases)
+
+        self.cap_score()
+
+class T7(autograder.question.Question):
+    def score_question(self, submission):
+        regex = submission.__all__.TASK7_REGEX
+
+        if ((not isinstance(regex, str)) or (regex == "")):
+            self.fail("Your regex should be a non-empty string.")
+
+        self.full_credit()
+
+        # [(string, is_match?, feedback), ...]
+        test_cases = [
+            # Matching test cases.
+            ('0x12.34', True, 'only numeric'),
+            ('0xfe.dc', True, 'only alpha'),
+            ('0x0', True, 'hexadecimal, fewest numeric digits'),
+            ('0xf', True, 'hexadecimal, fewest alpha digits'),
+            ('0x123456789.abcdef', True, 'hexadecimal, long number'),
+            ('0x0001.0000000', True, 'hexadecimal, lots of zeros'),
+            ('1', True, 'decimal, normal int'),
+            ('1.12', True, 'decimal, normal float'),
+            ('-1', True, 'decimal, negative int'),
+            ('-1.12', True, 'decimal, negative float'),
+            ('0x1', True, 'hexadecimal, normal int'),
+            ('0x1.12', True, 'hexadecimal, normal float'),
+            ('-0x1', True, 'hexadecimal, negative int'),
+            ('-0x1.12', True, 'hexadecimal, negative float'),
+            ('0', True, 'decimal, zero'),
+            ('0x0', True, 'hexadecimal, zero'),
+            ('   \t123', True, 'leading whitespace'),
+            ('123   \t', True, 'trailing whitespace'),
+            ('   \t123   \t', True, 'surrounding whitespace'),
+
+            # Non-matching test cases.
+            ('', False, 'empty string'),
+            ('xff.ff', False, 'bad hexadecimal prefix'),
+            ('0x12.AB', False, 'uppercase'),
+            ('0x12.34.', False, 'extra point'),
+            ('zzz0xff.ff', False, 'hexadecimal, junk at the beginning'),
+            ('0xff.ffzzz', False, 'hexadecimal, junk at the end'),
+            ('0x12.', False, 'hexadecimal, trailing point'),
+            ('zzz123', False, 'decimal, junk at the beginning'),
+            ('123zzz', False, 'decimal, junk at the end'),
+            ('12.', False, 'decimal, trailing point'),
+            ('a.12', False, 'hexadecimal, no prefix'),
+            ('+3', False, 'plus sign'),
+            ('foo 123 bar', False, 'decimal, number not alone'),
+            ('foo 0x123 bar', False, 'hexadecimal, number not alone'),
         ]
 
         _run_regex_test_cases(self, regex, test_cases)
@@ -254,7 +307,7 @@ class T8(autograder.question.Question):
 
             if (actual != expected):
                 message = "Missed test case: '%s'." % (feedback)
-                self.add_message(message, add_score = -1)
+                self.add_message(message, add_score = -3)
 
         self.cap_score()
 
