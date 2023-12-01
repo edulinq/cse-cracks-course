@@ -23,7 +23,7 @@ class Regex(autograder.assignment.Assignment):
                 T8(20, "Task 8: Mysterious Code - Best"),
                 # You can automatically add a question that checks the assignment's Python style.
                 autograder.style.Style(kwargs.get('input_dir'), max_points = 0),
-        ], **kwargs)
+            ], **kwargs)
 
 class T1(autograder.question.Question):
     def score_question(self, submission):
