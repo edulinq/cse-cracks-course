@@ -1,6 +1,6 @@
 # Assignment: Regular Expressions
 
-This is an assignment to get students familir with [regular expressions](https://en.wikipedia.org/wiki/Regular_expression),
+This is an assignment to get students familiar with [regular expressions](https://en.wikipedia.org/wiki/Regular_expression),
 also known as "regex" or "regexp".
 
 ## Jupyter Lab
@@ -9,70 +9,103 @@ This specific assignment will use an iPython notebook.
 Notebooks are not required for using Python or the autograder,
 but can be useful for some assignment setups.
 
-
-
-In this course most your assignments will be distributed in the form of iPython notebooks,
-and we encourage you to work with them through [Jupyter Lab](https://jupyter.org/).
-iPython notebooks, "notebooks" for short, let you write Python code in an interactive environment that
-can display visual elements like images and graphs.
-
-Unfortunately, notebooks are not intended to be edited directly like most source code files.
-So, we will be using Jupyter Lab to work with our notebooks.
-When we run Jupyter Lab, it will open a session in a web browser that allows us to edit and view our notebooks.
-
-For a tutorial on iPython notebooks with Jupyter Lab, see:
- - [Text Tutorial](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
- - [Video Tutorial](https://www.youtube.com/watch?v=HW29067qVWk)
-
 ## Grader
 
 Graders are classes that extend [autograder.assignment.Assignment](https://github.com/eriq-augustine/autograder-py/blob/main/autograder/assignment.py).
+Their task is to look at a student's submission, assign a score, and give feedback to the student.
+The default grader for Python should be called [grader.py](grader.py).
+More complex or custom grading is possible in the autograder system,
+custom graders just need to produce a JSON file (result.json) that describes the outcome of grading.
 
-Take in a submission and grade.
+The most simple version of a grader is essentially a unit test,
+where different cases are tested and it raises an exception on the first failure (or assertion error).
+However, good graders will usually a little deeper and incorporate the following aspects:
+ - Test all test cases, even if earlier ones fail.
+ - Test empty cases.
+ - Check types.
+ - Assign partial credit relative to the amount of effort.
+ - Give feedback for each test case that is specific enough to help the student,
+   but general enough to not give away the solution.
+   Ideally, a student should be able to make their own test case from the feedback.
 
-Most simply, can behave like a unit test.
-But good graders are deeper.
-Partial credit.
-Good Feedback.
+Coming up with good feedback is typically the hardest part of writing graders.
+
+The grader can be run locally using:
+```sh
+./grader.py -s test-submissions/solution
+```
+
+Note that the grader accepts vanilla Python files and iPython notebooks.
 
 ### Local
 
-optional, but recommended
-(especially for courses that limit the number of submissions)
+An optional component of an assignment is a local grader.
+Local graders are a grader that will be given to the students and contain simple test cases.
 
-### Remote
+Local graders serve a few main purposes:
+ - Let the students run basic tests without sending a submission to the autograder.
+   - This can be especially useful if your grader checks style.
+ - Gives the students a place to write their own test cases without needing to write any surrounding infrastructure.
+ - Give a place to check types before being sent to the autograder (which can avoid confusing errors).
+ - Lets the students see the actual infrastructure (and output) that they will be graded with.
 
-Running locally
+In this assignment, the local grader is in [local_grader.py](local_grader.py).
+
+The local grader can be run using:
+```sh
+./grader.py test-submissions/solution
+```
 
 ## Submitting Your Assignment
 
-Config
+Before submitting an assignment to the autograder,
+you need to ensure that the proper configuration is in place,
+e.g., server, course, assignment, etc.
+All configuration options can be set directly on the command line,
+but it is usually easier to have most/all of the options pre-set in a config file.
+The [autograder documentation](https://github.com/eriq-augustine/autograder-py/blob/main/README.md#configuration)
+goes into detail on how to set options.
+It is recommended that you distribute a basic configuration with each assignment that students can just copy and override with their own information.
+In this assignment, that is [config.json](config.json).
 
-
-
-**Edit config.json**
-
-Open up `config.json` and put your information in there:
-    - `course` -- The current course you are enrolled in (already set).
-    - `assignment` -- The current assignment you are working on (already set).
-    - `server` -- The autograding server to submit assignment to (already set).
-    - `user` -- Your username (email) for the autograder.
-    - `pass` -- The password that was emailed to you in the beginning of this course.
-                    If you didn't get the password, forgot it, etc; talk to a TA.
-
-For example, Sammy Slug would have a `config.json` for HO0 that looks like:
-```json
-{
-    "course": "CSE40",
-    "assignment": "HO0",
-    "server": "http://lighthouse.soe.ucsc.edu",
-    "user": "sslug@ucsc.edu",
-    "pass": "1234567890"
-}
-```
-
+With the config in place, you can submit an assignment with:
 ```sh
 python3 -m autograder.cli.submission.submit assignment.ipynb
 ```
 
-## Writing New Test Cases
+To check your most resent submission, you can use:
+```sh
+python3 -m autograder.cli.submission.peek
+```
+
+Or to check all your past submission, you can use:
+```sh
+python3 -m autograder.cli.submission.history
+```
+
+## Test Submissions
+
+Testing graders is strongly encouraged.
+
+One way to test graders is by using [test-submissions](test-submissions).
+A test submission is a directory that contains all the code a student would submit (in whatever expected directory structure)
+and a `test-submssion.json` file that defines the expected grading result.
+
+You can test an assignment against all your test submissions using the `autograder.cli.testing.test-submissions` tool:
+```sh
+python3 -m autograder.cli.testing.test-submissions -a assignment.json -s test-submissions
+```
+
+Testing your graders is a great thing to put in continuous integration for your course.
+
+To create a new `test-submission.json` file, you can just use the grader with the `-t` / `--test-submission-path` argument:
+```sh
+./grader.py -s test-submissions/solution -t test-submissions/solution
+```
+
+This will create [test-submissions/solution/test-submission.json](test-submissions/solution/test-submission.json).
+
+For any test case where the output cannot be string compared
+(like if it uses random numbers, times, or absolute paths (*such as the style checker*)),
+you can set `ignore_message` to true.
+You can see this in action in the [bad-style test submission](test-submissions/bad-style/test-submission.json).

@@ -1,7 +1,7 @@
 {
-    "course": "CSE40",
-    "assignment": "HO0",
-    "server": "http://lighthouse.soe.ucsc.edu",
+    "course": "CSE-i123",
+    "assignment": "regex",
+    "server": "http://lighthouse.soe.ucsc.edu:12345",
     "user": "sslug@ucsc.edu",
     "pass": "1234567890"
 }

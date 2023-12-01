@@ -10,17 +10,19 @@ import autograder.style
 
 class Regex(autograder.assignment.Assignment):
     def __init__(self, **kwargs):
-        super().__init__(name = "Regex Tutorial", questions = [
-            T1(10, "Task 1: My First Match"),
-            T2(10, "Task 2: License Plates"),
-            T3(10, "Task 3: Mysterious Code"),
-            T4(10, "Task 4: Mysterious Code - Better"),
-            T5(10, "Task 5: Finding Bad Data"),
-            T6(10, "Task 6: Finding Bad Data - Better"),
-            T7(20, "Task 7: Finding Bad Data - Best"),
-            T8(20, "Task 8: Mysterious Code - Best"),
-            # You can automatically add a question that checks the assignment's Python style.
-            autograder.style.Style(kwargs.get('input_dir'), max_points = 0),
+        super().__init__(
+            name = "Regex Tutorial",
+            questions = [
+                T1(10, "Task 1: My First Match"),
+                T2(10, "Task 2: License Plates"),
+                T3(10, "Task 3: Mysterious Code"),
+                T4(10, "Task 4: Mysterious Code - Better"),
+                T5(10, "Task 5: Finding Bad Data"),
+                T6(10, "Task 6: Finding Bad Data - Better"),
+                T7(20, "Task 7: Finding Bad Data - Best"),
+                T8(20, "Task 8: Mysterious Code - Best"),
+                # You can automatically add a question that checks the assignment's Python style.
+                autograder.style.Style(kwargs.get('input_dir'), max_points = 0),
         ], **kwargs)
 
 class T1(autograder.question.Question):

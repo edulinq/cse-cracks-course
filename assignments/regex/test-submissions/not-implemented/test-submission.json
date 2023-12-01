@@ -1,0 +1,61 @@
+{
+    "result": {
+        "name": "Regex Tutorial",
+        "questions": [
+            {
+                "name": "Task 1: My First Match",
+                "max_points": 10,
+                "score": 0,
+                "message": "Your regex should be a non-empty string."
+            },
+            {
+                "name": "Task 2: License Plates",
+                "max_points": 10,
+                "score": 0,
+                "message": "Your regex should be a non-empty string."
+            },
+            {
+                "name": "Task 3: Mysterious Code",
+                "max_points": 10,
+                "score": 0,
+                "message": "Your regex should be a non-empty string."
+            },
+            {
+                "name": "Task 4: Mysterious Code - Better",
+                "max_points": 10,
+                "score": 0,
+                "message": "Your regex should be a non-empty string."
+            },
+            {
+                "name": "Task 5: Finding Bad Data",
+                "max_points": 10,
+                "score": 0,
+                "message": "Your regex should be a non-empty string."
+            },
+            {
+                "name": "Task 6: Finding Bad Data - Better",
+                "max_points": 10,
+                "score": 0,
+                "message": "Your regex should be a non-empty string."
+            },
+            {
+                "name": "Task 7: Finding Bad Data - Best",
+                "max_points": 20,
+                "score": 0,
+                "message": "Your regex should be a non-empty string."
+            },
+            {
+                "name": "Task 8: Mysterious Code - Best",
+                "max_points": 20,
+                "score": 0,
+                "message": "Your regex should be a non-empty string."
+            },
+            {
+                "name": "Style",
+                "max_points": 0,
+                "score": 0,
+                "message": "Style is clean!"
+            }
+        ]
+    }
+}
