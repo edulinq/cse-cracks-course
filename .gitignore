@@ -2,9 +2,6 @@ __pycache__
 .pytest_cache
 .ipynb_checkpoints/
 
-_submissions/
-/users.json
-
 .DS_Store
 .idea
 *.log
