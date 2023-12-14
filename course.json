@@ -2,6 +2,10 @@
     "id": "CSE-i123",
     "display-name": "CSE i123 - CSE Cracks",
     "backup": [
-        {"when": {"time-of-day": "04:00"}}
+        {
+            "when": [
+                {"daily": "04:00"}
+            ]
+        }
     ]
 }
