@@ -1,6 +1,6 @@
 {
     "question_type": "multiple_answers_question",
-    "prompt": "Which of the following does the regex `Lo{2,3}ng Cat` match? Select all that apply.",
+    "prompt": "Which of the following does the regex `r'Lo{2,3}ng Cat'` match? Select all that apply.",
     "answers": [
         {"correct": false, "text": "Long Cat"},
         {"correct": true,  "text": "Loong Cat"},

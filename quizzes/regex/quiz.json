@@ -21,14 +21,10 @@
     essay
     fill-in-multiple-blanks
     fill-in-the-blank
-    matching
-    multiple-answers
-    multiple-choice
     multiple-drop-downs
     numerical
     short-answer
     text-only
-    true-false
     */
 
     "groups": [
@@ -40,10 +36,24 @@
             ]
         },
         {
+            "name": "Regular Expression Vocabulary",
+            "points": 10,
+            "questions": [
+                "questions/terms"
+            ]
+        },
+        {
             "name": "Basic Regular Expressions",
             "points": 10,
             "questions": [
                 "questions/regex-01"
+            ]
+        },
+        {
+            "name": "Quantification",
+            "points": 10,
+            "questions": [
+                "questions/general-quantification"
             ]
         }
     ]
