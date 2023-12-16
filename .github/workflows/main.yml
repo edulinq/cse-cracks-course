@@ -46,3 +46,7 @@ jobs:
       - name: Check Notebook Output
         shell: bash
         run: ./.ci/check_notebook_output.sh
+
+      - name: Check Quizzes
+        shell: bash
+        run: ./.ci/check_quizzes.sh

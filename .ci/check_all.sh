@@ -27,8 +27,8 @@ function main() {
     "${THIS_DIR}/check_notebook_output.sh"
     ((error_count += $?))
 
-    # "${THIS_DIR}/check_quizzes.sh"
-    # ((error_count += $?))
+    "${THIS_DIR}/check_quizzes.sh"
+    ((error_count += $?))
 
     if [[ ${error_count} -gt 0 ]] ; then
         echo "Found ${error_count} issues."

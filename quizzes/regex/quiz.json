@@ -1,0 +1,50 @@
+{
+    "title": "Regular Expressions",
+    "course_title": "CSE Cracks",
+    "term_title": "20XX",
+    "date": "",
+
+    "description": "This quiz is open note, open book, and open world. Assume all regular expressions are done in Python using the `re` standard library. Good luck\\!",
+
+    "practice": true,
+    "published": false,
+
+    "time_limit": 30,
+    "shuffle_answers": true,
+
+    "hide_results": null,
+    "show_correct_answers": true,
+
+    "assignment_group_name": "Quizzes",
+
+    /* TEST
+    essay
+    fill-in-multiple-blanks
+    fill-in-the-blank
+    matching
+    multiple-answers
+    multiple-choice
+    multiple-drop-downs
+    numerical
+    short-answer
+    text-only
+    true-false
+    */
+
+    "groups": [
+        {
+            "name": "Regular Expression in Programming Languages",
+            "points": 10,
+            "questions": [
+                "questions/basic-01"
+            ]
+        },
+        {
+            "name": "Basic Regular Expressions",
+            "points": 10,
+            "questions": [
+                "questions/regex-01"
+            ]
+        }
+    ]
+}
