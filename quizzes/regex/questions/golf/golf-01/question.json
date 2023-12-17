@@ -1,0 +1,9 @@
+{
+    "question_type": "short_answer_question",
+    "answers": [
+        "`r'\\d\\d:\\d\\d [AP]M'`",
+        "`r\"\\d\\d:\\d\\d [AP]M\"`",
+        "`r'\\d{2}:\\d{2} [AP]M'`",
+        "`r\"\\d{2}:\\d{2} [AP]M\"`"
+    ]
+}

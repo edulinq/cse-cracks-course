@@ -23,7 +23,6 @@
     fill-in-the-blank
     multiple-drop-downs
     numerical
-    short-answer
     text-only
     */
 
@@ -54,6 +53,13 @@
             "points": 10,
             "questions": [
                 "questions/general-quantification"
+            ]
+        },
+        {
+            "name": "Regex Golf",
+            "points": 20,
+            "questions": [
+                "questions/golf"
             ]
         }
     ]
