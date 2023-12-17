@@ -17,43 +17,52 @@
 
     "assignment_group_name": "Quizzes",
 
-    /* TEST
-    numerical
-    text-only
-    */
-
     "groups": [
         {
             "name": "Regular Expression in Programming Languages",
-            "points": 10,
+            "points": 5,
             "questions": [
                 "questions/basic-01"
             ]
         },
         {
             "name": "Regular Expression Vocabulary",
-            "points": 10,
+            "points": 20,
             "questions": [
                 "questions/terms"
             ]
         },
         {
             "name": "Basic Regular Expressions",
-            "points": 10,
+            "points": 5,
             "questions": [
                 "questions/regex-01"
             ]
         },
         {
-            "name": "Quantifiers",
+            "name": "Passage",
+            "points": 0,
+            "questions": [
+                "questions/passage"
+            ]
+        },
+        {
+            "name": "Passage Search",
             "points": 10,
+            "questions": [
+                "questions/passage-search"
+            ]
+        },
+        {
+            "name": "Quantifiers",
+            "points": 5,
             "questions": [
                 "questions/quantifiers"
             ]
         },
         {
             "name": "General Quantification",
-            "points": 10,
+            "points": 5,
             "questions": [
                 "questions/general-quantification"
             ]
