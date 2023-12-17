@@ -8,7 +8,7 @@ readonly QUIZ_DIR="${BASE_DIR}/quizzes"
 
 readonly TEMP_DIR='/tmp/csei123/__quizgen_check__'
 
-readonly FORMATS='json'
+readonly FORMATS='json tex'
 
 function main() {
     if [[ $# -ne 0 ]]; then
