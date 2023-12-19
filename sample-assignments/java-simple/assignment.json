@@ -1,0 +1,21 @@
+{
+    "id": "java-simple",
+    "display-name": "A Simple Java Assignment",
+    "static-files": [
+        "grader.sh",
+        "Grader.java",
+        {
+            "type": "url",
+            "path": "https://repo1.maven.org/maven2/org/json/json/20231013/json-20231013.jar"
+        }
+    ],
+    "image": "autograder.base",
+    "invocation": ["bash", "./grader.sh"],
+    "post-static-docker-commands": [
+        "RUN apt-get update",
+        "RUN apt-get install -y openjdk-11-jdk"
+    ],
+    "post-submission-files-ops": [
+        ["cp", "input/Assignment.java", "work/Assignment.java"]
+    ]
+}

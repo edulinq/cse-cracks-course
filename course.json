@@ -1,11 +1,14 @@
 {
     "id": "CSE-i123",
-    "display-name": "CSE i123 - CSE Cracks",
-    "backup": [
-        {
-            "when": [
-                {"daily": "04:00"}
-            ]
-        }
-    ]
+    "name": "CSE i123 - CSE Cracks",
+    "source": {
+        "type": "git",
+        "path": "https://github.com/eriq-augustine/cse-cracks-course.git"
+    },
+    "course-update": [{"when": [{"every": {"hours": 4}}]}],
+    "backup": [{
+        "when": [
+            {"daily": "04:00"}
+        ]
+    }]
 }

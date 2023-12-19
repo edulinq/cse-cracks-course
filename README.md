@@ -16,6 +16,12 @@ Here are some links that you will find useful when learning about the autograder
  - [Autograder Server](https://github.com/eriq-augustine/autograder-server)
  - [Autograder Python Interface](https://github.com/eriq-augustine/autograder-server)
 
+### Assignments
+
+This course contains fully produced assignments that can be used for teaching in the [assignments](assignments) directory.
+All assignments fall under the [licence used in this repo](LICENSE), and may be used freely.
+
 ### Sample Assignments
 
-This sample course contains a sample assignment in the [assignments](assignments) directory.
+In addition to the real assignments, this repo also contains sample assignments that exist only as examples of autograder usage.
+These assignments live in the [sample-assignments](sample-assignments) directory.
