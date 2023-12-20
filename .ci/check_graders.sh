@@ -22,7 +22,7 @@ function check_grader() {
 function check_assignments() {
     local error_count=0
 
-    for assignment_dir in "${BASE_DIR}/assignments/"* ; do
+    for assignment_dir in "${BASE_DIR}/"*assignments*"/"* ; do
         echo "Checking grader for assignment: '${assignment_dir}'."
         check_grader "${assignment_dir}"
         ((error_count += $?))
