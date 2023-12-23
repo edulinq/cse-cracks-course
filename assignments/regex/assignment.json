@@ -5,7 +5,7 @@
         "../../requirements.txt",
         "grader.py"
     ],
-    "image": "autograder.python",
+    "image": "eriqaugustine/autograder.python",
     "post-static-docker-commands": [
         "RUN pip3 install -r work/requirements.txt"
     ]

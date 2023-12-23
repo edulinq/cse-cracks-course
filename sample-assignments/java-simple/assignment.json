@@ -9,7 +9,7 @@
             "path": "https://repo1.maven.org/maven2/org/json/json/20231013/json-20231013.jar"
         }
     ],
-    "image": "autograder.base",
+    "image": "eriqaugustine/autograder.base",
     "invocation": ["bash", "./grader.sh"],
     "post-static-docker-commands": [
         "RUN apt-get update",
