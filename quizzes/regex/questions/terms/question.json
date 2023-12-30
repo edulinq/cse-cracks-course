@@ -5,7 +5,7 @@
         "matches": [
             ["Character Class", "A set of character where any single member of the group can be matched."],
             ["Anchor", "A special character that can be used to match the beginning or end of a line."],
-            ["Word Boundary", "The empty string between (`[\^\W]` and `\w`) or between (`\w` and `[\W$]`)."],
+            ["Word Boundary", "The empty string between (`[\\W^]` and `\\w`) or between (`\\w` and `[\\W$]`)."],
             ["Kleene Star", "A repetition operator that matches the range $[0, infinity]$."],
             ["Group", "A collection of character that can be treated as a single unit."],
             ["Disjunction", "An operator that allows us to select one of two options."],
