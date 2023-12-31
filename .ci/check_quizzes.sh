@@ -26,7 +26,7 @@ function main() {
             echo "Rendering '${path}' to '${format}'."
             local out_path="${TEMP_DIR}/$(basename $(dirname "${path}")).${format}"
 
-            python3 -m quizgen.cli.parse-quiz "${path}" --format "${format}" > "${out_path}"
+            python3 -m quizgen.cli.parse-quiz "${path}" --flatten-groups --format "${format}" > "${out_path}"
             if [[ $? -ne 0 ]] ; then
                 echo "ERROR: Failed to render '${path}' with format '${format}'."
                 ((error_count++))
