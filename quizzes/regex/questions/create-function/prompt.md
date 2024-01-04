@@ -1,4 +1,4 @@
-Implement a function with the folowing signature and description:
+Implement a function with the following signature and description:
 
 ```
 import re
@@ -8,13 +8,11 @@ def compute(text):
     Compute the result of the binary expression represented in the |text| variable.
     The possible operators are: "+", "-", "*", and "/".
     Operands may be any real number.
-    The the operation is division, the RHS (denominator) will not be zero.
+    If the operation is division, the RHS (denominator) will not be zero.
     """
 
     return NotImplemented
 ```
-
-Create a regular expression that matches successfully completes a game a golf with the table below.
 
 Specifics:
  - Your function must use regular expressions.
