@@ -1,0 +1,535 @@
+\documentclass[addpoints]{exam}
+
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{upquote}
+
+% PDF metadata.
+\usepackage[
+    pdftex,
+    hidelinks,
+    pdftitle={Regular Expressions - CSE Cracks 20XX},
+    pdfcreator={Quiz Generator},
+    pdfkeywords={Version: 9bfb7385-d}
+]{hyperref}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% Code display settings.
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    fontadjust=true,
+    basewidth=0.5em,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    tabsize=4,
+    breaklines=true,
+    breakatwhitespace=false,
+}
+
+% Headers and footers.
+\pagestyle{headandfoot}
+\header{CSE Cracks}{Regular Expressions}{20XX}
+\headrule
+\footer{Version: 9bfb7385-d}{}{\thepage}
+\footrule
+
+\begin{document}
+
+\begin{coverpages}
+
+\centerline{\Large Regular Expressions}
+\vspace{0.2cm}
+
+\centerline{\large CSE Cracks -- 20XX}
+\centerline{\large January 14, 2024}
+\vspace{1.0cm}
+
+This quiz is open note, open book, and open world. Assume all regular expressions are done in Python using the \verb|re| standard library. Good luck!
+
+\vspace{1.0cm}
+
+\begin{center}
+    \multirowgradetable{2}[questions]
+\end{center}
+
+\vspace{1.0cm}
+
+\makebox[\textwidth]{Name:\enspace\hrulefill}
+
+\vspace{1.0cm}
+
+\makebox[\textwidth]{Email:\enspace\hrulefill}
+
+\vspace{0.5cm}
+
+\begin{quote}
+I acknowledge that I have neither given nor received inappropriate help on this exam, and have abided by the letter and spirit of the University of California, Santa Cruz Code of Academic Integrity  while taking this exam.
+\end{quote}
+
+\vspace{1.0cm}
+
+\makebox[\textwidth]{Signature:\enspace\hrulefill}
+
+\end{coverpages}
+
+\begin{questions}
+
+%%% BEGIN Question {1 -- Ice Breaker} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[5]
+
+What is your favorite feature of regular expressions?
+
+\vspace{0.5cm}
+
+\vspace{3cm}
+
+\end{minipage}
+
+%%% END Question {1 -- Ice Breaker} %%%
+
+
+
+%%% BEGIN Question {2 -- Regular Expression in Programming Languages} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[5]
+
+Regular expressions are implemented as either a core feature or in the standard library of almost every major programming language.
+
+\vspace{0.2cm}
+
+\begin{choices}
+
+\choice
+
+False
+\choice
+
+True
+
+\end{choices}
+
+\end{minipage}
+
+%%% END Question {2 -- Regular Expression in Programming Languages} %%%
+
+
+
+%%% BEGIN Question {3 -- Regular Expression Vocabulary} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[20]
+
+Match the following terms to their corresponding definitions.
+
+\begin{center}
+    \begin{tabular}{ l c l }
+
+\vspace{0.2cm}
+
+\underline{\hspace{1cm}} Disjunction & \hspace{0.5cm} & A. An operator that allows us to select one of two options. \\
+\vspace{0.2cm}
+\underline{\hspace{1cm}} Word Boundary & \hspace{0.5cm} & B. A special character that can be used to match the beginning or end of a line. \\
+\vspace{0.2cm}
+\underline{\hspace{1cm}} Character Class & \hspace{0.5cm} & C. The set of all alphanumeric characters and underscore. \\
+\vspace{0.2cm}
+\underline{\hspace{1cm}} Group & \hspace{0.5cm} & D. A collection of character that can be treated as a single unit. \\
+\vspace{0.2cm}
+\underline{\hspace{1cm}} Anchor & \hspace{0.5cm} & E. A repetition operator that matches the range $ [1, infinity] $. \\
+\vspace{0.2cm}
+\underline{\hspace{1cm}} Kleene Star & \hspace{0.5cm} & F. The empty string between (\verb|[\W^]| and \verb|\w|) or between (\verb|\w| and \verb|[\W$]|). \\
+\vspace{0.2cm}
+\underline{\hspace{1cm}} Back Reference & \hspace{0.5cm} & G. An operator that allows us to select both of two options. \\
+\vspace{0.2cm}
+  & \hspace{0.5cm} & H. A repetition operator that matches the range $ [0, infinity] $. \\
+\vspace{0.2cm}
+  & \hspace{0.5cm} & I. All digits. \\
+\vspace{0.2cm}
+  & \hspace{0.5cm} & J. A set of character where any single member of the group can be matched. \\
+\vspace{0.2cm}
+  & \hspace{0.5cm} & K. A special character that allows us to invoke a previous group. \\
+\vspace{0.2cm}
+
+    \end{tabular}
+\end{center}
+
+\end{minipage}
+
+%%% END Question {3 -- Regular Expression Vocabulary} %%%
+
+
+
+%%% BEGIN Question {4 -- Basic Regular Expressions} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[5]
+
+Which of the following regular expressions would be best to match a 10-digit phone number formatted as: '123 456-7890'. (Assume any stretch of continuous whitespace is a single space character.)
+
+\vspace{0.2cm}
+
+\begin{choices}
+
+\choice
+
+\verb|r'\d* \d*-\d*'|
+\choice
+
+\verb|r'\d{3} \d{3}-\d{4}'|
+\choice
+
+\verb|r'\d+ \d+-\d+'|
+\choice
+
+\verb|r'\d{10}'|
+
+\end{choices}
+
+\end{minipage}
+
+%%% END Question {4 -- Basic Regular Expressions} %%%
+
+
+
+%%% BEGIN Question {5 -- Passage} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[0]
+
+Below is the opening paragraph (which is actually just one sentence) from
+\textit{A Tale Of Two Cities} written by Charles Dickens.
+Future questions may reference this passage as "the provided passage".
+ \newline
+
+
+"It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness,
+it was the epoch of belief, it was the epoch of incredulity, it was the season of Light,
+it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us,
+we had nothing before us, we were all going direct to Heaven, we were all going direct the other way
+— in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received,
+for good or for evil, in the superlative degree of comparison only."
+
+\end{minipage}
+
+%%% END Question {5 -- Passage} %%%
+
+
+
+%%% BEGIN Question {6 -- Passage Search} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[10]
+
+In the provided passage, how many non-specific time periods are mentioned,
+i.e., how many matches are there for the following regular expression:
+
+\begin{lstlisting}
+r'(age|season|epoch)\s+of\s+(\w+)'
+\end{lstlisting}
+
+\vspace{0.5cm}
+
+\vspace{3cm}
+
+\end{minipage}
+
+%%% END Question {6 -- Passage Search} %%%
+
+
+
+%%% BEGIN Question {7 -- Quantifiers} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[5]
+
+For each scenario, select the quantifier that is most appropriate. \newline
+
+
+You want to match the leading zeros for some number. E.g., "00" for "005". \newline
+\textsc{<PART1>} \newline
+
+
+You want to match the negative sign for some number. E.g., "-" for "-9". \newline
+\textsc{<PART2>} \newline
+
+
+You want to match the main digits (before any decimal point) for a required number. E.g. "123" for "123". \newline
+\textsc{<PART3>} \newline
+
+
+\vspace{0.2cm}
+
+\begin{parts}
+
+\part
+
+PART1:
+
+\begin{oneparchoices}
+
+\choice
+
+\verb|*|
+\choice
+
+\verb|+|
+\choice
+
+\verb|?|
+
+\end{oneparchoices}
+
+\part
+
+PART2:
+
+\begin{oneparchoices}
+
+\choice
+
+\verb|?|
+\choice
+
+\verb|*|
+\choice
+
+\verb|+|
+
+\end{oneparchoices}
+
+\part
+
+PART3:
+
+\begin{oneparchoices}
+
+\choice
+
+\verb|+|
+\choice
+
+\verb|*|
+\choice
+
+\verb|?|
+
+\end{oneparchoices}
+
+\end{parts}
+
+\end{minipage}
+
+%%% END Question {7 -- Quantifiers} %%%
+
+
+
+%%% BEGIN Question {8 -- General Quantification} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[5]
+
+Which of the following does the regex \verb|r'Lo{2,3}ng Cat'| match? Select all that apply.
+
+\vspace{0.2cm}
+
+\begin{choices}
+
+\choice
+
+Loooong Cat
+\choice
+
+Long Cat
+\choice
+
+Loong Cat
+\choice
+
+Looong Cat
+
+\end{choices}
+
+\end{minipage}
+
+%%% END Question {8 -- General Quantification} %%%
+
+
+
+%%% BEGIN Question {9 -- Backreference Matching} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[10]
+
+Suppose that we are trying to write a script extract name information from text and put it into a CSV (comma-separated value) file.
+The order of the columns in our CSV file are: first name, last name, and title.
+As part of our script, we have a regular expression that looks for people that have their name's written as "last, first".
+
+\begin{lstlisting}
+import re
+
+def create_csv_line(text_line):
+    regex = r'^\s*((Dr).?)?\s*([^,]+)\s*,\s*(.+)\s*$'
+    replacement = MY_REPLACEMENT_STRING
+
+    return re.sub(regex, replacement, text_line)
+\end{lstlisting}
+
+Fill in the blanks in \verb|MY_REPLACEMENT_STRING| to make the above code work correctly.
+
+\verb|MY_REPLACEMENT_STRING = r'|\textsc{<BLANK1>}\verb|,|\textsc{<BLANK2>}\verb|,|\textsc{<BLANK3>}\verb|'|
+
+\vspace{0.2cm}
+
+\begin{choices}
+
+\choice
+
+BLANK1: \underline{\hspace{1cm}}
+
+\choice
+
+BLANK2: \underline{\hspace{1cm}}
+
+\choice
+
+BLANK3: \underline{\hspace{1cm}}
+
+\end{choices}
+
+\end{minipage}
+
+%%% END Question {9 -- Backreference Matching} %%%
+
+
+
+%%% BEGIN Question {10 -- Regex Golf} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[15]
+
+Create a regular expression that matches successfully completes a game a golf with the table below.
+
+Specifics:
+\begin{itemize}
+    \item Match all values in the \verb|Match| column.
+    \item Do not match any values in the \verb|No Match| column.
+    \item Write you regex as a raw string using a single or double quotes (not triple quotes).
+    \item Treat the contents of each table cell as a string (so you do not have the match the quotes).
+    \item You may assume that any contiguous whitespace is a single space character.
+    \item You only need to match (or not match) the values in the table, you do not need to extend this pattern to unseen values.
+\end{itemize}
+
+
+\begin{center}
+    \begin{tabular}{ cc }
+        Match & No Match \\
+        \hline \\
+        \verb|'12:00 AM'| & \verb|'00:00'| \\
+        \verb|'05:30 PM'| & \verb|'17:30'| \\
+        \verb|'01:45 AM'| & \verb|'01:65 AM'| \\
+        \verb|'10:10 PM'| & \verb|'10:10 ZZ'| \\
+        \verb|'12:34 PM'| & \verb|'12:34 pm'| \\
+        \verb|'11:59 PM'| & \verb|'23:59'| \\
+         & \verb|'123:45 AM'| \\
+         & \verb|'12:345 PM'| \\
+    \end{tabular}
+\end{center}
+
+
+\vspace{0.5cm}
+
+\vspace{3cm}
+
+\end{minipage}
+
+%%% END Question {10 -- Regex Golf} %%%
+
+
+
+%%% BEGIN Question {11 -- Write a Function} %%%
+
+\vspace{1cm}
+
+\begin{minipage}{\textwidth}
+
+\question[20]
+
+Implement a function with the following signature and description:
+
+\begin{lstlisting}
+import re
+
+def compute(text):
+    """
+    Compute the result of the binary expression represented in the |text| variable.
+    The possible operators are: "+", "-", "*", and "/".
+    Operands may be any real number.
+    If the operation is division, the RHS (denominator) will not be zero.
+    """
+
+    return NotImplemented
+\end{lstlisting}
+
+Specifics:
+\begin{itemize}
+    \item Your function must use regular expressions.
+    \item You may not use \verb|eval()| or any other Python ast functionality.
+    \item You may only import modules from the Python standard library.
+    \item You should return a float that is the result of the binary operation represented by \verb|text|.
+    \item The operator will be one of:  $ \{+, -, *, /\} $.
+    \item Operands may be any real number.
+\end{itemize}
+
+
+\vspace{0.5cm}
+
+\vspace{10cm}
+
+\end{minipage}
+
+%%% END Question {11 -- Write a Function} %%%
+
+\end{questions}
+
+\end{document}

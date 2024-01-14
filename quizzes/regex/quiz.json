@@ -19,6 +19,13 @@
 
     "groups": [
         {
+            "name": "Ice Breaker",
+            "points": 5,
+            "questions": [
+                "questions/ice-breaker"
+            ]
+        },
+        {
             "name": "Regular Expression in Programming Languages",
             "points": 5,
             "questions": [
@@ -76,7 +83,7 @@
         },
         {
             "name": "Regex Golf",
-            "points": 20,
+            "points": 15,
             "questions": [
                 "questions/golf"
             ]
