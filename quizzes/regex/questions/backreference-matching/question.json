@@ -1,8 +1,8 @@
 {
     "question_type": "fill_in_multiple_blanks_question",
     "answers": {
-        "BLANK1": "\\\\4",
-        "BLANK2": "\\\\3",
-        "BLANK3": "\\\\2"
+        "A": "\\\\4",
+        "B": "\\\\3",
+        "C": "\\\\2"
     }
 }

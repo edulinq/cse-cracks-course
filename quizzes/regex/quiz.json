@@ -49,6 +49,8 @@
         {
             "name": "Passage",
             "points": 0,
+            "custom_header": "",
+            "skip_numbering": true,
             "questions": [
                 "questions/passage"
             ]
@@ -77,6 +79,9 @@
         {
             "name": "Backreference Matching",
             "points": 10,
+            "hints": {
+                "inline": true
+            },
             "questions": [
                 "questions/backreference-matching"
             ]

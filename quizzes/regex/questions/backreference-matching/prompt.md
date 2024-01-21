@@ -14,4 +14,4 @@ def create_csv_line(text_line):
 
 Fill in the blanks in `MY_REPLACEMENT_STRING` to make the above code work correctly.
 
-`MY_REPLACEMENT_STRING = r'`[[BLANK1]]`,`[[BLANK2]]`,`[[BLANK3]]`'`
+`MY_REPLACEMENT_STRING = r'`[[A]]`,`[[B]]`,`[[C]]`'`
