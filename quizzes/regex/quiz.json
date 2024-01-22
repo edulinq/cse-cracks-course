@@ -28,6 +28,7 @@
         {
             "name": "Regular Expression in Programming Languages",
             "points": 5,
+            "shuffle_answers": false,
             "questions": [
                 "questions/basic-01"
             ]
