@@ -17,7 +17,7 @@ The full reference for all these commands live at the [quiz generator repo](http
 
 ### Uploading a Quiz to Canvas
 
-To upload a quiz to Canvas, the `quizgen.cli.upload-canvas-quiz` module can be used.
+To upload a quiz to Canvas, the `quizgen.cli.canvas.upload` module can be used.
 The basic usage is as follows:
 ```
 python3 -m quizgen.cli.canvas.upload regex/quiz.json --course <canvas course id> --token <canvas access token>
@@ -27,7 +27,7 @@ If an existing quiz with the same name is found, then nothing will be uploaded u
 
 ### Parsing a Specific Quiz
 
-To parse an entire specific quiz, you can use the `quizgen.cli.parse-quiz` module.
+To parse an entire specific quiz, you can use the `quizgen.cli.parse.quiz` module.
 This is useful if you want to check if a quiz properly parses.
 The basic usage is as follows:
 ```
@@ -40,7 +40,7 @@ Parsing a quiz is particularly useful in CI to ensure that all course quizzes ar
 
 ### Parsing a Specific Question
 
-To parse a specific quiz question, you can use the `quizgen.cli.parse-question` module.
+To parse a specific quiz question, you can use the `quizgen.cli.parse.question` module.
 This is useful if you want to check if a question properly parses.
 The basic usage is as follows:
 ```
@@ -53,7 +53,7 @@ You can use the same `--format` option from quiz paring.
 
 ### Parsing a Specific File
 
-To parse a specific file, you can use the `quizgen.cli.parse-file` module.
+To parse a specific file, you can use the `quizgen.cli.parse.file` module.
 This is useful if you want to check if/how a specific document parses.
 The basic usage is as follows:
 ```
