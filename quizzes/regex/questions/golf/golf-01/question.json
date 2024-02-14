@@ -1,5 +1,5 @@
 {
-    "question_type": "fill_in_the_blank_question",
+    "question_type": "fill_in_the_blank",
     "answers": [
         "`r'\\d\\d:\\d\\d [AP]M'`",
         "`r\"\\d\\d:\\d\\d [AP]M\"`",

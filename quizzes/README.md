@@ -20,7 +20,7 @@ The full reference for all these commands live at the [quiz generator repo](http
 To upload a quiz to Canvas, the `quizgen.cli.upload-canvas-quiz` module can be used.
 The basic usage is as follows:
 ```
-python3 -m quizgen.cli.upload-canvas-quiz regex/quiz.json --course <canvas course id> --token <canvas access token>
+python3 -m quizgen.cli.canvas.upload regex/quiz.json --course <canvas course id> --token <canvas access token>
 ```
 
 If an existing quiz with the same name is found, then nothing will be uploaded unless the `--force` flag is given..
@@ -31,7 +31,7 @@ To parse an entire specific quiz, you can use the `quizgen.cli.parse-quiz` modul
 This is useful if you want to check if a quiz properly parses.
 The basic usage is as follows:
 ```
-python3 -m quizgen.cli.parse-quiz regex/quiz.json
+python3 -m quizgen.cli.parse.quiz regex/quiz.json
 ```
 
 This command will output the fully parsed quiz in for format controlled by the `--format` option,
@@ -44,11 +44,12 @@ To parse a specific quiz question, you can use the `quizgen.cli.parse-question` 
 This is useful if you want to check if a question properly parses.
 The basic usage is as follows:
 ```
-python3 -m quizgen.cli.parse-question regex/questions/basic-01/question.json
+python3 -m quizgen.cli.parse.question regex/questions/basic-01/question.json
 ```
 
 This command will output the fully parsed question in the JSON format,
 and will exit with a non-zero status if the parse failed.
+You can use the same `--format` option from quiz paring.
 
 ### Parsing a Specific File
 
@@ -56,7 +57,7 @@ To parse a specific file, you can use the `quizgen.cli.parse-file` module.
 This is useful if you want to check if/how a specific document parses.
 The basic usage is as follows:
 ```
-python3 -m quizgen.cli.parse-file regex/questions/golf/golf-01/prompt.md
+python3 -m quizgen.cli.parse.file regex/questions/golf/golf-01/prompt.md
 ```
 
 This command will output the fully parsed file in for format controlled by the `--format` option,

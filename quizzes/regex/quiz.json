@@ -6,16 +6,8 @@
 
     "description": "This quiz is open note, open book, and open world. Assume all regular expressions are done in Python using the `re` standard library. Good luck\\!",
 
-    "practice": true,
-    "published": false,
-
-    "time_limit": 30,
+    "time_limit_mins": 30,
     "shuffle_answers": true,
-
-    "hide_results": null,
-    "show_correct_answers": true,
-
-    "assignment_group_name": "Quizzes",
 
     "groups": [
         {

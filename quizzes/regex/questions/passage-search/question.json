@@ -1,5 +1,5 @@
 {
-    "question_type": "numerical_question",
+    "question_type": "numerical",
     "answers": [
         {"type": "exact", "value": 6}
     ]

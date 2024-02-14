@@ -1,5 +1,5 @@
 {
-    "question_type": "multiple_choice_question",
+    "question_type": "multiple_choice",
     "prompt": "Which of the following regular expressions would be best to match a 10\\-digit phone number formatted as: '123 456\\-7890'. (Assume any stretch of continuous whitespace is a single space character.)",
     "answers": [
         {"correct": true,  "text":  "`r'\\d{3} \\d{3}-\\d{4}'`"},
