@@ -2,9 +2,21 @@
     "question_type": "multiple_choice",
     "prompt": "Which of the following regular expressions would be best to match a 10\\-digit phone number formatted as: '123 456\\-7890'. (Assume any stretch of continuous whitespace is a single space character.)",
     "answers": [
-        {"correct": true,  "text":  "`r'\\d{3} \\d{3}-\\d{4}'`"},
-        {"correct": false,  "text":  "`r'\\d{10}'`"},
-        {"correct": false,  "text":  "`r'\\d* \\d*-\\d*'`"},
-        {"correct": false,  "text":  "`r'\\d+ \\d+-\\d+'`"}
+        {"correct": true,  "text": "`r'\\d{3} \\d{3}-\\d{4}'`"},
+        {
+            "correct": false,
+            "text": "`r'\\d{10}'`",
+            "feedback": "What about whitespace?"
+        },
+        {
+            "correct": false,
+            "text": "`r'\\d* \\d*-\\d*'`",
+            "feedback": "What if there are no digits in the string?"
+        },
+        {
+            "correct": false,
+            "text": "`r'\\d+ \\d+-\\d+'`",
+            "feedback": "Can this take too many digits?"
+        }
     ]
 }
