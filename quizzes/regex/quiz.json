@@ -51,6 +51,9 @@
         {
             "name": "Passage Search",
             "points": 10,
+            "hints": {
+                "width": 0.25
+            },
             "questions": [
                 "questions/passage-search"
             ]
@@ -58,6 +61,9 @@
         {
             "name": "Quantifiers",
             "points": 5,
+            "hints": {
+                "inline": true
+            },
             "questions": [
                 "questions/quantifiers"
             ]
