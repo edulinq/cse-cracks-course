@@ -23,7 +23,7 @@ The basic usage is as follows:
 python3 -m quizgen.cli.canvas.upload regex/quiz.json --course <canvas course id> --token <canvas access token>
 ```
 
-If an existing quiz with the same name is found, then nothing will be uploaded unless the `--force` flag is given..
+If an existing quiz with the same name is found, then nothing will be uploaded unless the `--force` flag is given.
 
 ### Parsing a Specific Quiz
 
