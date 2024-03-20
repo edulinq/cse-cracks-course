@@ -3,7 +3,7 @@
 The CSE Cracks course tries to fill some of the gaps in tooling and knowledge present in most CSE curriculums.
 This course is inspired by (and in no way a replacement for) [MIT's Missing Semester](https://missing.csail.mit.edu/).
 
-Additionally, this repository serves as an example for courses that use the [autograder](https://github.com/eriq-augustine/autograder-server) system.
+Additionally, this repository serves as an example for courses that use the [autograder](https://github.com/edulinq/autograder-server) system.
 
 ## Autograder Courses
 
@@ -13,8 +13,8 @@ and tells the autograder that the directory containing it is an autograder cours
 The autograder will then recursively search the course directory for any `assignment.json` files.
 
 Here are some links that you will find useful when learning about the autograder:
- - [Autograder Server](https://github.com/eriq-augustine/autograder-server)
- - [Autograder Python Interface](https://github.com/eriq-augustine/autograder-server)
+ - [Autograder Server](https://github.com/edulinq/autograder-server)
+ - [Autograder Python Interface](https://github.com/edulinq/autograder-py)
 
 ### Assignments
 
