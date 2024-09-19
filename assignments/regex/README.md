@@ -70,17 +70,17 @@ In this assignment, that is [config.json](config.json).
 
 With the config in place, you can submit an assignment with:
 ```sh
-python3 -m autograder.cli.submission.submit assignment.ipynb
+python3 -m autograder.run.submit assignment.ipynb
 ```
 
 To check your most resent submission, you can use:
 ```sh
-python3 -m autograder.cli.submission.peek
+python3 -m autograder.run.peek
 ```
 
 Or to check all your past submission, you can use:
 ```sh
-python3 -m autograder.cli.submission.history
+python3 -m autograder.run.history
 ```
 
 ## Test Submissions
