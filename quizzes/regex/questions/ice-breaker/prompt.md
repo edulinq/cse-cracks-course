@@ -1,6 +1,12 @@
 Taking inspiration from the XKCD comic below,
 how would you save the day using regular expressions?
 
-// We can use a table to center images.
+:::block
 
-| ![XKCD Comic 208](xkcd-regular-expressions.png) |
+<style>
+    "content-align": "center"
+</style>
+
+![XKCD Comic 208](xkcd-regular-expressions.png)
+
+:::

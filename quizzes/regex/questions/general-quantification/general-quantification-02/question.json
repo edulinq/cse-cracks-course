@@ -2,9 +2,9 @@
     "question_type": "multiple_answers",
     "prompt": "Which of the following does the regex `r'I'm So{3,4} Hungry!'` match? Select all that apply.",
     "answers": [
-        {"correct": false, "text": "I'm So Hungry\\!"},
-        {"correct": false, "text": "I'm Soo Hungry\\!"},
-        {"correct": true,  "text": "I'm Sooo Hungry\\!"},
-        {"correct": true,  "text": "I'm Soooo Hungry\\!"}
+        {"correct": false, "text": "I'm So Hungry!"},
+        {"correct": false, "text": "I'm Soo Hungry!"},
+        {"correct": true,  "text": "I'm Sooo Hungry!"},
+        {"correct": true,  "text": "I'm Soooo Hungry!"}
     ]
 }

@@ -9,7 +9,7 @@ Specifics:
  - You only need to match (or not match) the values in the table, you do not need to extend this pattern to unseen values.
 
 
-|- Match       | No Match      |
+| Match        | No Match      |
 |--------------|---------------|
 | `'12:00 AM'` | `'00:00'`     |
 | `'05:30 PM'` | `'17:30'`     |

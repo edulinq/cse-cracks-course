@@ -4,7 +4,7 @@
     "term_title": "20XX",
     "date": "",
 
-    "description": "This quiz is open note, open book, and open world. Assume all regular expressions are done in Python using the `re` standard library. Good luck\\!",
+    "description": "This quiz is open note, open book, and open world. Assume all regular expressions are done in Python using the `re` standard library. Good luck!",
 
     "time_limit_mins": 30,
     "shuffle_answers": true,

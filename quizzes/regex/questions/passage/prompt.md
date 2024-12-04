@@ -1,7 +1,6 @@
 Below is the opening paragraph (which is actually just one sentence) from
 *A Tale Of Two Cities* written by Charles Dickens.
 Future questions may reference this passage as "the provided passage".
-\n
 
 "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness,
 it was the epoch of belief, it was the epoch of incredulity, it was the season of Light,
