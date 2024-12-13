@@ -1,4 +1,4 @@
 autograder-py>=0.4.3
-eq-quizgen>=0.2.4
+eq-quizgen>=0.3.0
 
 jupyterlab>=3.5.0
