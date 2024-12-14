@@ -1,4 +1,5 @@
 {
+    "type": "question",
     "question_type": "multiple_dropdowns",
     "answers": {
         "PART1": [

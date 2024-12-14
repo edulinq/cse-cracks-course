@@ -1,4 +1,5 @@
 {
+    "type": "question",
     "question_type": "fill_in_the_blank",
     "answers": [
         "`r'\\d\\d:\\d\\d [AP]M'`",

@@ -1,4 +1,5 @@
 {
+    "type": "question",
     "question_type": "numerical",
     "feedback": {
         "general": "Remember that your answer should be an integer."

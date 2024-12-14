@@ -1,4 +1,5 @@
 {
+    "type": "question",
     "question_type": "matching",
     "prompt": "Match the following terms to their corresponding definitions.",
     "answers": {

@@ -1,4 +1,5 @@
 {
+    "type": "question",
     "question_type": "true_false",
     "prompt": "Regular expressions are implemented as either a core feature or in the standard library of almost every major programming language.",
     "feedback": {

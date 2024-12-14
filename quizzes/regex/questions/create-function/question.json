@@ -1,4 +1,5 @@
 {
+    "type": "question",
     "question_type": "essay",
     "answers": "A complete solution can pull out all three components in one regex."
 }

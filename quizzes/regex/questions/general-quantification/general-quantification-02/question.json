@@ -1,4 +1,5 @@
 {
+    "type": "question",
     "question_type": "multiple_answers",
     "prompt": "Which of the following does the regex `r'I'm So{3,4} Hungry!'` match? Select all that apply.",
     "answers": [
