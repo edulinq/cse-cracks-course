@@ -12,7 +12,7 @@
     ],
     "image": "eriqaugustine/autograder.base",
     "invocation": ["bash", "./grader.sh"],
-    "post-submission-files-ops": [
+    "post-submission-file-ops": [
         ["cp", "input/assignment.cpp", "work/assignment.cpp"]
     ]
 }
