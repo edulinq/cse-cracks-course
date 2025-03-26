@@ -6,10 +6,32 @@
         "path": "https://github.com/eriq-augustine/cse-cracks-course.git",
         "reference": "autograder-deploy"
     },
-    "course-update": [{"when": [{"every": {"hours": 4}}]}],
-    "backup": [{
-        "when": [
-            {"daily": "04:00"}
-        ]
-    }]
+    "tasks": [
+        {
+            "type": "update",
+            "when": {
+                "every": {
+                    "hours": 4
+                }
+            }
+        },
+        {
+            "type": "report",
+            "when": {
+                "daily": "4:00"
+            },
+            "options": {
+                "to": [
+                    "owner",
+                    "admin"
+                ]
+            }
+        },
+        {
+            "type": "backup",
+            "when": {
+                "daily": "3:00"
+            }
+        }
+    ]
 }
