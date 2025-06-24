@@ -6,7 +6,7 @@ readonly THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly BASE_DIR="${THIS_DIR}/.."
 readonly QUIZ_DIR="${BASE_DIR}/quizzes"
 
-readonly TEMP_DIR='/tmp/csei123/__quizgen_check__'
+readonly TEMP_DIR='/tmp/csei123/__quizcomp_check__'
 
 readonly FORMATS='json tex'
 
@@ -26,7 +26,7 @@ function main() {
             echo "Rendering '${path}' to '${format}'."
             local out_path="${TEMP_DIR}/$(basename $(dirname "${path}")).${format}"
 
-            python3 -m quizgen.cli.parse.quiz "${path}" --flatten-groups --format "${format}" > "${out_path}"
+            python3 -m quizcomp.cli.parse.quiz "${path}" --flatten-groups --format "${format}" > "${out_path}"
             if [[ $? -ne 0 ]] ; then
                 echo "ERROR: Failed to render '${path}' with format '${format}'."
                 ((error_count++))
