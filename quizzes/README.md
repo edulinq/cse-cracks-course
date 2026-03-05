@@ -2,7 +2,7 @@
 
 This directory contains quizzes (Canvas and paper) for CSE Cracks course.
 These quizzes serve the dual purposes of being real educating tools,
-and being samples for using the [Quiz Composer](https://github.com/eriq-augustine/quiz-composer).
+and being samples for using the [Quiz Composer](https://github.com/edulinq/quiz-composer).
 
 These quizzes are created in a neutral Markdown-like format that can be converted to
 Canvas quizzes, raw HTML quizzes (using form submission), and GradeScope-compatible Tex/PDF quizzes.

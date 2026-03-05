@@ -21,7 +21,13 @@ Here are some links that you will find useful when learning about the autograder
 This course contains fully produced assignments that can be used for teaching in the [assignments](assignments) directory.
 All assignments fall under the [licence used in this repo](LICENSE), and may be used freely.
 
-### Sample Assignments
+#### Sample Assignments
 
 In addition to the real assignments, this repo also contains sample assignments that exist only as examples of autograder usage.
 These assignments live in the [sample-assignments](sample-assignments) directory.
+
+### Quizzes
+
+This repository also comes with quizzes that demonstrate how to use a quiz with the [Quiz Composer](https://github.com/edulinq/quiz-composer).
+
+For a fully functional quiz on regular expressions, look in the [quizzes/regex directory](./quizzes/regex).

@@ -11,7 +11,7 @@ but can be useful for some assignment setups.
 
 ## Grader
 
-Graders are classes that extend [autograder.assignment.Assignment](https://github.com/eriq-augustine/autograder-py/blob/main/autograder/assignment.py).
+Graders are classes that extend [autograder.assignment.Assignment](https://github.com/edulinq/autograder-py/blob/main/autograder/assignment.py).
 Their task is to look at a student's submission, assign a score, and give feedback to the student.
 The default grader for Python should be called [grader.py](grader.py).
 More complex or custom grading is possible in the autograder system,
@@ -63,7 +63,7 @@ you need to ensure that the proper configuration is in place,
 e.g., server, course, assignment, etc.
 All configuration options can be set directly on the command line,
 but it is usually easier to have most/all of the options pre-set in a config file.
-The [autograder documentation](https://github.com/eriq-augustine/autograder-py/blob/main/README.md#configuration)
+The [autograder documentation](https://github.com/edulinq/autograder-py/blob/main/README.md#configuration)
 goes into detail on how to set options.
 It is recommended that you distribute a basic configuration with each assignment that students can just copy and override with their own information.
 In this assignment, that is [config.json](config.json).

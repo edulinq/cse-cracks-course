@@ -3,7 +3,7 @@
     "name": "CSE i123 - CSE Cracks",
     "source": {
         "type": "git",
-        "path": "https://github.com/eriq-augustine/cse-cracks-course.git",
+        "path": "https://github.com/edulinq/cse-cracks-course.git",
         "reference": "autograder-deploy"
     },
     "tasks": [
