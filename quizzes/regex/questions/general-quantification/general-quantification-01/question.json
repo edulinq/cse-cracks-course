@@ -1,5 +1,4 @@
 {
-    "type": "question",
     "question_type": "multiple_answers",
     "prompt": "Which of the following does the regex `r'Lo{2,3}ng Cat'` match? Select all that apply.",
     "answers": [

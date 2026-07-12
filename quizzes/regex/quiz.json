@@ -1,8 +1,7 @@
 {
     "name": "Regular Expressions",
-    "course_title": "CSE Cracks",
-    "term_title": "20XX",
-    "date": "",
+    "course_name": "CSE Cracks",
+    "term_name": "20XX",
 
     "description": "This quiz is open note, open book, and open world. Assume all regular expressions are done in Python using the `re` standard library. Good luck!",
 

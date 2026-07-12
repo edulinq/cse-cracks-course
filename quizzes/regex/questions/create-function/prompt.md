@@ -15,9 +15,10 @@ def compute(text):
 ```
 
 Specifics:
- - Your function must use regular expressions.
- - You may not use `eval()` or any other Python ast functionality.
- - You may only import modules from the Python standard library.
- - You should return a float that is the result of the binary operation represented by `text`.
- - The operator will be one of:  $ \{+, -, *, /\} $.
- - Operands may be any real number.
+
+- Your function must use regular expressions.
+- You may not use `eval()` or any other Python ast functionality.
+- You may only import modules from the Python standard library.
+- You should return a float that is the result of the binary operation represented by `text`.
+- The operator will be one of: $ \{+, -, *, /\} $.
+- Operands may be any real number.
