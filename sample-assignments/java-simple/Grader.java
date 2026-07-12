@@ -1,16 +1,10 @@
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Grader {
     private static final String ASSIGNMENT_NAME = "java-simple";
-    private static final int INDENT = 4;
 
     public static void main(String[] srgs) {
         // Score all the assignment tasks.
@@ -22,18 +16,16 @@ public class Grader {
     }
 
     private static void outputJSON(List<QuestionScore> scores) {
-        Map<String, Object> result = new HashMap<String, Object>();
-        result.put("name", ASSIGNMENT_NAME);
-
-        JSONArray questions = new JSONArray();
+        List<String> questions = new ArrayList<String>();
         for (QuestionScore score : scores) {
-            questions.put(score.toJSON());
+            questions.add(score.toJSON());
         }
 
-        result.put("questions", questions);
+        String json = String.format(
+                "{\"name\": \"%s\", \"questions\": [%s]}",
+                ASSIGNMENT_NAME, String.join(", ", questions));
 
-        JSONObject jsonObject = new JSONObject(result);
-        System.out.println(jsonObject.toString(INDENT));
+        System.out.println(json);
     }
 
     private static QuestionScore testAdd() {
@@ -109,8 +101,11 @@ public class Grader {
             this.max_points = max_points;
         }
 
-        public JSONObject toJSON() {
-            return new JSONObject(this, "name", "max_points", "score", "message");
+        public String toJSON() {
+            String escapedMessage = message.replace("\"", "\\\"").replace("\n", "\\n").replace("\t", "\\t");
+            return String.format(
+                    "{\"name\": \"%s\", \"max_points\": %d, \"score\": %d, \"message\": \"%s\"}",
+                    name, max_points, score, escapedMessage);
         }
     }
 }

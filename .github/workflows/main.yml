@@ -33,20 +33,20 @@ jobs:
 
       - name: Check Graders
         shell: bash
-        run: ./.ci/check_graders.sh
+        run: ./scripts/check_graders.sh
 
       - name: Check Local Graders
         shell: bash
-        run: ./.ci/check_local_graders.sh
+        run: ./scripts/check_local_graders.sh
 
       - name: Check Style
         shell: bash
-        run: ./.ci/check_style.sh
+        run: ./scripts/check_style.sh
 
       - name: Check Notebook Output
         shell: bash
-        run: ./.ci/check_notebook_output.sh
+        run: ./scripts/check_notebook_output.sh
 
       - name: Check Quizzes
         shell: bash
-        run: ./.ci/check_quizzes.sh
+        run: ./scripts/check_quizzes.sh

@@ -23,14 +23,14 @@ function main() {
     fi
 
     # Compile.
-    javac -cp .:json-20231013.jar *.java
+    javac -cp . *.java
     if [[ $? -ne 0 ]] ; then
         echo "ERROR: Failed to compile assignment."
         return 2
     fi
 
     # Run grader.
-    java -cp .:json-20231013.jar Grader > "${outputPath}"
+    java -cp . Grader > "${outputPath}"
     if [[ $? -ne 0 ]] ; then
         echo "ERROR: Failed to run grader."
         return 3
