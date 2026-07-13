@@ -1,4 +1,4 @@
 autograder-py>=0.4.3
-edq-quizcomp==0.5.0.dev2
+edq-quizcomp>=1.0.0,==1.*
 
 jupyterlab>=3.5.0
